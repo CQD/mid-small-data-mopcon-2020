@@ -1,0 +1,19 @@
+#!/bin/bash
+
+linecnt=$1
+colcnt=${2:-1}
+
+
+if [ "" == "$linecnt"  ] ; then
+    echo "多欄位隨機數字產生器，範圍是0 - 32767" 1>&2
+    echo "用法: rand {產生行數} {產生列數}" 1>&2
+    exit -1;
+fi
+
+for (( lineidx=0; lineidx<${linecnt}; lineidx=lineidx+1 )); do
+    for (( colidx=0; colidx<${colcnt}; colidx=colidx+1 )); do
+        echo -n "$RANDOM "
+    done
+    echo ""
+done
+
