@@ -11,8 +11,9 @@ if [ "" == "$linecnt"  ] ; then
 fi
 
 for (( lineidx=0; lineidx<${linecnt}; lineidx=lineidx+1 )); do
-    for (( colidx=0; colidx<${colcnt}; colidx=colidx+1 )); do
-        echo -n "$RANDOM "
+    echo -n "$RANDOM"
+    for (( colidx=1; colidx<${colcnt}; colidx=colidx+1 )); do
+        echo -n " $RANDOM"
     done
     echo ""
 done
