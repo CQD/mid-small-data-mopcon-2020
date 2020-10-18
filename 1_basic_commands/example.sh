@@ -17,6 +17,10 @@ echo === 檔案內有幾個不同的數字 ===
 gunzip -c data.gz | sort -u | wc -l
 
 echo
+echo === 檔案內有幾個不同的偶數 ===
+gunzip -c data.gz | grep '[02468]$' | sort -u | wc -l
+
+echo
 echo === 計算數字出現的次數（節錄） ===
 gunzip -c data.gz | sort | uniq -c | head
 
